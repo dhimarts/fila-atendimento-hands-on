@@ -1,16 +1,16 @@
-# 🎟️ Sistema Inteligente de Atendimento com Filas em Python
+🎟️ Sistema Inteligente de Atendimento com Filas em Python
 
 ## 📌 Descrição
 
-Projeto acadêmico desenvolvido na disciplina de **Estrutura de Dados II**, utilizando Python para implementar e analisar estruturas de fila aplicadas ao contexto de uma **Central de Atendimento**.
+Trabalho da disciplina de **Estrutura de Dados II** que simula uma **central de atendimento** em Python.
 
-O projeto compara **fila clássica (FIFO), fila circular e fila de prioridade**, observando como a ordem de chegada, a capacidade de armazenamento e o nível de prioridade influenciam a organização e o atendimento dos clientes.
+O programa usa **fila clássica (FIFO), fila circular e fila de prioridade** para mostrar como os mesmos clientes são atendidos em cada uma delas.
 
 ## 🎯 Objetivo
 
-Aplicar conceitos de estruturas de dados por meio da implementação prática de três tipos de fila, comparando seu comportamento em uma simulação de atendimento.
+Comparar os três tipos de fila na prática: a ordem dos atendimentos, o reaproveitamento de espaço e o tratamento das prioridades.
 
-Também é objetivo demonstrar a reutilização de posições na fila circular e preservar a ordem de chegada entre clientes com a mesma prioridade. Cada cliente possui nome, senha e prioridade: **1 = emergência, 2 = prioritário e 3 = atendimento normal**.
+Cada cliente tem nome, senha e prioridade: **1 = emergência, 2 = prioritário e 3 = atendimento normal**. Na fila de prioridade, quem chega primeiro tem preferência entre clientes do mesmo nível.
 
 ## 🛠️ Tecnologias utilizadas
 
@@ -37,23 +37,23 @@ Também é objetivo demonstrar a reutilização de posições na fila circular e
 
 ### 🔹 Fila clássica
 
-A classe `Fila` utiliza `deque` para aplicar o princípio **FIFO**, em que o primeiro cliente a chegar é o primeiro a ser atendido. A demonstração inicial utiliza **10 clientes** e verifica a preservação da ordem de chegada.
+Atende por ordem de chegada. O primeiro exemplo usa **10 clientes** para conferir essa sequência.
 
 ### 🔹 Fila circular
 
-A classe `FilaCircular` utiliza uma lista com capacidade para **5 clientes**. Os índices `front` e `rear` avançam de forma circular, permitindo reutilizar posições liberadas após os atendimentos.
+Guarda até **5 clientes** e reaproveita os espaços que ficam livres. A execução mostra os índices `front` e `rear` a cada inserção e remoção.
 
 ### 🔹 Fila de prioridade
 
-A classe `FilaPrioridade` utiliza o módulo `heapq` com a estrutura `(prioridade, contador, cliente)`. Os menores valores de prioridade são atendidos primeiro, enquanto o contador mantém a ordem de chegada nos empates.
+Atende primeiro os clientes de prioridade 1, depois os de prioridade 2 e, por último, os de prioridade 3. Em caso de empate, vale a ordem de chegada.
 
 ### 🔹 Preparação da simulação
 
-São gerados automaticamente **20 clientes**, utilizando uma semente fixa. Os mesmos clientes são utilizados nas três estruturas. Na circular, inserções e atendimentos são intercalados para respeitar a capacidade de cinco posições.
+O desafio gera **20 clientes** e usa esse mesmo grupo nas três filas. Como a circular só comporta cinco pessoas, o programa atende um cliente sempre que precisa abrir espaço para o próximo.
 
 ### 🔹 Análise dos resultados
 
-O programa apresenta a ordem de chegada, as ordens de atendimento e o estado da fila circular. Os resultados são comparados e as quatro questões do relatório são respondidas neste README.
+A saída permite comparar quem chegou primeiro e quem foi atendido primeiro em cada fila. As respostas às quatro perguntas da atividade estão no final deste arquivo.
 
 ## 📚 Aprendizados
 
@@ -76,13 +76,13 @@ A classe `Fila` usa `deque`, com inserção no fim e remoção no início. Ofere
 
 ### Fila circular
 
-A classe `FilaCircular` utiliza uma lista de capacidade fixa igual a 5. `front` indica a próxima remoção e `rear` a próxima inserção. Os índices avançam com módulo da capacidade. Um contador distingue os estados cheio e vazio, pois ambos podem apresentar `front == rear`.
+A classe `FilaCircular` usa uma lista de cinco posições. `front` aponta para o próximo cliente a sair e `rear` para a próxima posição de entrada. O operador `%` faz o índice voltar ao início quando chega ao fim da lista. A quantidade de clientes permite distinguir fila cheia de fila vazia, já que nos dois casos pode ocorrer `front == rear`.
 
 A demonstração preenche as cinco posições, tenta inserir na fila cheia, remove os dois primeiros clientes e insere outros dois. As posições 0 e 1 são reutilizadas: o vetor fica com as senhas `[6, 7, 3, 4, 5]`, mas a ordem de atendimento continua `3, 4, 5, 6, 7`.
 
 ### Fila de prioridade
 
-A classe `FilaPrioridade` usa `heapq` com tuplas `(prioridade, contador, cliente)`. A menor prioridade numérica sai primeiro. O contador crescente preserva a ordem de chegada nos empates. Na demonstração, a saída esperada é Bruno, Diego, Carla e Ana.
+A classe `FilaPrioridade` guarda tuplas `(prioridade, contador, cliente)` em um heap do módulo `heapq`. A prioridade define quem sai primeiro; o contador desempata pela chegada. No exemplo, Bruno e Diego têm prioridade 1, mas Bruno chegou antes. Por isso, a sequência é Bruno, Diego, Carla e Ana.
 
 ## 🧪 Desafio Final e Comparação
 
@@ -94,7 +94,7 @@ São gerados automaticamente 20 clientes com prioridades entre 1 e 3. A semente 
 | Circular | Ordem de chegada | Capacidade 5; intercala atendimento e inserção |
 | Prioridade | Prioridade 1, depois 2, depois 3; chegada nos empates | Armazena os 20 clientes antes de atender |
 
-A fila circular mantém a mesma sequência FIFO da clássica, utilizando apenas cinco posições. No desafio, quando está cheia, o programa atende um cliente antes de inserir o próximo. Nenhum cliente é descartado. A fila de prioridade muda a sequência conforme a urgência. A comparação é de ordem e comportamento; não é uma medição de desempenho.
+A clássica e a circular atendem os 20 clientes na mesma ordem. A diferença é que a circular precisa liberar espaço durante a entrada dos clientes. Já a fila de prioridade altera a sequência para atender os casos mais urgentes primeiro. Todos os clientes são atendidos. O programa compara essas sequências, sem medir tempo de execução.
 
 ## ✅ Evidências dos Testes
 
@@ -109,22 +109,22 @@ O programa verifica automaticamente:
 - Atendimento dos 20 clientes nas três estruturas, sem perdas na circular.
 - Erro ao remover ou consultar o próximo cliente de filas vazias.
 
-A execução bem-sucedida termina com `PASSOU: todos os testes, inclusive fila vazia e ausencia de perdas.`
+Se todas as verificações passarem, a última linha será `Testes concluídos sem erros.`
 
 ## 📝 Respostas do Relatório
 
 ### 1. Por que a ordem da fila de prioridade pode ser diferente da clássica?
 
-A fila clássica considera apenas a ordem de chegada. A de prioridade considera primeiro o nível de urgência: um cliente de prioridade 1 pode chegar depois de um cliente de prioridade 3 e ser atendido antes. A chegada só desempata clientes da mesma prioridade.
+Porque a clássica atende quem chegou primeiro, enquanto a de prioridade atende primeiro quem tem maior urgência. Assim, alguém com prioridade 1 pode chegar depois de alguém com prioridade 3 e ser atendido antes. Entre clientes de mesma prioridade, continua valendo a chegada.
 
 ### 2. Em quais situações reais uma fila de prioridade seria mais adequada?
 
-Em triagem de emergência hospitalar, atendimento de incidentes críticos de sistemas e processamento de tarefas urgentes. Nessas situações, a urgência ou importância deve influenciar a ordem de atendimento.
+Em situações em que alguns casos não podem esperar tanto quanto outros, como atendimento hospitalar por gravidade, chamados de suporte com falhas críticas e processamento de tarefas urgentes.
 
 ### 3. Quais são as vantagens e limitações de uma fila circular?
 
-As vantagens são reutilizar posições liberadas, manter uso de memória limitado e inserir/remover sem deslocar todos os elementos. As limitações são a capacidade fixa, a necessidade de tratar a fila cheia e o controle cuidadoso dos índices e da quantidade. Ela mantém FIFO, sem dar preferência a emergências.
+Ela reaproveita as posições livres e não precisa deslocar os outros elementos a cada atendimento. Também mantém um espaço fixo de armazenamento. Por outro lado, só aceita a quantidade de clientes definida na criação e exige cuidado com os índices. Quando fica cheia, é preciso liberar espaço antes de inserir outro cliente.
 
 ### 4. O que acontece ao inserir em uma fila circular cheia?
 
-Nesta implementação, a operação lança `OverflowError` e recusa a inserção, preservando os clientes existentes. A demonstração captura e apresenta esse erro. No desafio final, o programa evita a tentativa inválida atendendo um cliente antes de inserir outro. Sobrescrever clientes não é o comportamento adotado.
+Neste código, a inserção é recusada com `OverflowError`. Os clientes que já estavam na fila permanecem nela. O teste mostra essa mensagem; no desafio com 20 clientes, o programa atende uma pessoa antes de inserir a próxima quando a fila está cheia.
