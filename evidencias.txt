@@ -1,0 +1,177 @@
+1. Fila clássica - 10 clientes
+Tamanho: 10 | Próximo: Cliente 01 (senha=1, prioridade=3)
+
+Ordem de atendimento FIFO:
+Cliente 01 (senha=1, prioridade=3)
+Cliente 02 (senha=2, prioridade=3)
+Cliente 03 (senha=3, prioridade=3)
+Cliente 04 (senha=4, prioridade=3)
+Cliente 05 (senha=5, prioridade=3)
+Cliente 06 (senha=6, prioridade=3)
+Cliente 07 (senha=7, prioridade=3)
+Cliente 08 (senha=8, prioridade=3)
+Cliente 09 (senha=9, prioridade=3)
+Cliente 10 (senha=10, prioridade=3)
+Os 10 clientes foram atendidos na ordem de chegada.
+
+2. Fila circular - capacidade de 5 clientes
+Inseriu 1 | front=0, rear=1, tamanho=1, posicoes=[1, None, None, None, None]
+Inseriu 2 | front=0, rear=2, tamanho=2, posicoes=[1, 2, None, None, None]
+Inseriu 3 | front=0, rear=3, tamanho=3, posicoes=[1, 2, 3, None, None]
+Inseriu 4 | front=0, rear=4, tamanho=4, posicoes=[1, 2, 3, 4, None]
+Inseriu 5 | front=0, rear=0, tamanho=5, posicoes=[1, 2, 3, 4, 5]
+Tentativa de inserir o sexto cliente: Fila circular cheia: não há espaço para outro cliente
+Atendeu 1 | front=1, rear=0, tamanho=4, posicoes=[None, 2, 3, 4, 5]
+Atendeu 2 | front=2, rear=0, tamanho=3, posicoes=[None, None, 3, 4, 5]
+Inseriu 6 | front=2, rear=1, tamanho=4, posicoes=[6, None, 3, 4, 5]
+Inseriu 7 | front=2, rear=2, tamanho=5, posicoes=[6, 7, 3, 4, 5]
+As posições 0 e 1 foram reutilizadas. Atendimento: 3, 4, 5, 6, 7.
+
+3. Fila de prioridade - desempate por chegada
+
+Atendimento por prioridade:
+Bruno (senha=2, prioridade=1)
+Diego (senha=4, prioridade=1)
+Carla (senha=3, prioridade=2)
+Ana (senha=1, prioridade=3)
+Bruno e Diego têm prioridade 1. Bruno foi atendido antes porque chegou primeiro.
+
+Desafio final - 20 clientes nas três filas
+
+Ordem de chegada:
+Cliente 01 (senha=1, prioridade=3)
+Cliente 02 (senha=2, prioridade=1)
+Cliente 03 (senha=3, prioridade=1)
+Cliente 04 (senha=4, prioridade=3)
+Cliente 05 (senha=5, prioridade=2)
+Cliente 06 (senha=6, prioridade=1)
+Cliente 07 (senha=7, prioridade=1)
+Cliente 08 (senha=8, prioridade=1)
+Cliente 09 (senha=9, prioridade=3)
+Cliente 10 (senha=10, prioridade=1)
+Cliente 11 (senha=11, prioridade=3)
+Cliente 12 (senha=12, prioridade=3)
+Cliente 13 (senha=13, prioridade=3)
+Cliente 14 (senha=14, prioridade=1)
+Cliente 15 (senha=15, prioridade=3)
+Cliente 16 (senha=16, prioridade=2)
+Cliente 17 (senha=17, prioridade=1)
+Cliente 18 (senha=18, prioridade=1)
+Cliente 19 (senha=19, prioridade=1)
+Cliente 20 (senha=20, prioridade=1)
+
+Ordem de atendimento - clássica:
+Cliente 01 (senha=1, prioridade=3)
+Cliente 02 (senha=2, prioridade=1)
+Cliente 03 (senha=3, prioridade=1)
+Cliente 04 (senha=4, prioridade=3)
+Cliente 05 (senha=5, prioridade=2)
+Cliente 06 (senha=6, prioridade=1)
+Cliente 07 (senha=7, prioridade=1)
+Cliente 08 (senha=8, prioridade=1)
+Cliente 09 (senha=9, prioridade=3)
+Cliente 10 (senha=10, prioridade=1)
+Cliente 11 (senha=11, prioridade=3)
+Cliente 12 (senha=12, prioridade=3)
+Cliente 13 (senha=13, prioridade=3)
+Cliente 14 (senha=14, prioridade=1)
+Cliente 15 (senha=15, prioridade=3)
+Cliente 16 (senha=16, prioridade=2)
+Cliente 17 (senha=17, prioridade=1)
+Cliente 18 (senha=18, prioridade=1)
+Cliente 19 (senha=19, prioridade=1)
+Cliente 20 (senha=20, prioridade=1)
+
+Fila circular: quando está cheia, atende um cliente antes de inserir o próximo.
+Inseriu 1 | front=0, rear=1, tamanho=1, posicoes=[1, None, None, None, None]
+Inseriu 2 | front=0, rear=2, tamanho=2, posicoes=[1, 2, None, None, None]
+Inseriu 3 | front=0, rear=3, tamanho=3, posicoes=[1, 2, 3, None, None]
+Inseriu 4 | front=0, rear=4, tamanho=4, posicoes=[1, 2, 3, 4, None]
+Inseriu 5 | front=0, rear=0, tamanho=5, posicoes=[1, 2, 3, 4, 5]
+Atendeu 1 | front=1, rear=0, tamanho=4, posicoes=[None, 2, 3, 4, 5]
+Inseriu 6 | front=1, rear=1, tamanho=5, posicoes=[6, 2, 3, 4, 5]
+Atendeu 2 | front=2, rear=1, tamanho=4, posicoes=[6, None, 3, 4, 5]
+Inseriu 7 | front=2, rear=2, tamanho=5, posicoes=[6, 7, 3, 4, 5]
+Atendeu 3 | front=3, rear=2, tamanho=4, posicoes=[6, 7, None, 4, 5]
+Inseriu 8 | front=3, rear=3, tamanho=5, posicoes=[6, 7, 8, 4, 5]
+Atendeu 4 | front=4, rear=3, tamanho=4, posicoes=[6, 7, 8, None, 5]
+Inseriu 9 | front=4, rear=4, tamanho=5, posicoes=[6, 7, 8, 9, 5]
+Atendeu 5 | front=0, rear=4, tamanho=4, posicoes=[6, 7, 8, 9, None]
+Inseriu 10 | front=0, rear=0, tamanho=5, posicoes=[6, 7, 8, 9, 10]
+Atendeu 6 | front=1, rear=0, tamanho=4, posicoes=[None, 7, 8, 9, 10]
+Inseriu 11 | front=1, rear=1, tamanho=5, posicoes=[11, 7, 8, 9, 10]
+Atendeu 7 | front=2, rear=1, tamanho=4, posicoes=[11, None, 8, 9, 10]
+Inseriu 12 | front=2, rear=2, tamanho=5, posicoes=[11, 12, 8, 9, 10]
+Atendeu 8 | front=3, rear=2, tamanho=4, posicoes=[11, 12, None, 9, 10]
+Inseriu 13 | front=3, rear=3, tamanho=5, posicoes=[11, 12, 13, 9, 10]
+Atendeu 9 | front=4, rear=3, tamanho=4, posicoes=[11, 12, 13, None, 10]
+Inseriu 14 | front=4, rear=4, tamanho=5, posicoes=[11, 12, 13, 14, 10]
+Atendeu 10 | front=0, rear=4, tamanho=4, posicoes=[11, 12, 13, 14, None]
+Inseriu 15 | front=0, rear=0, tamanho=5, posicoes=[11, 12, 13, 14, 15]
+Atendeu 11 | front=1, rear=0, tamanho=4, posicoes=[None, 12, 13, 14, 15]
+Inseriu 16 | front=1, rear=1, tamanho=5, posicoes=[16, 12, 13, 14, 15]
+Atendeu 12 | front=2, rear=1, tamanho=4, posicoes=[16, None, 13, 14, 15]
+Inseriu 17 | front=2, rear=2, tamanho=5, posicoes=[16, 17, 13, 14, 15]
+Atendeu 13 | front=3, rear=2, tamanho=4, posicoes=[16, 17, None, 14, 15]
+Inseriu 18 | front=3, rear=3, tamanho=5, posicoes=[16, 17, 18, 14, 15]
+Atendeu 14 | front=4, rear=3, tamanho=4, posicoes=[16, 17, 18, None, 15]
+Inseriu 19 | front=4, rear=4, tamanho=5, posicoes=[16, 17, 18, 19, 15]
+Atendeu 15 | front=0, rear=4, tamanho=4, posicoes=[16, 17, 18, 19, None]
+Inseriu 20 | front=0, rear=0, tamanho=5, posicoes=[16, 17, 18, 19, 20]
+Atendeu 16 | front=1, rear=0, tamanho=4, posicoes=[None, 17, 18, 19, 20]
+Atendeu 17 | front=2, rear=0, tamanho=3, posicoes=[None, None, 18, 19, 20]
+Atendeu 18 | front=3, rear=0, tamanho=2, posicoes=[None, None, None, 19, 20]
+Atendeu 19 | front=4, rear=0, tamanho=1, posicoes=[None, None, None, None, 20]
+Atendeu 20 | front=0, rear=0, tamanho=0, posicoes=[None, None, None, None, None]
+
+Ordem de atendimento - circular:
+Cliente 01 (senha=1, prioridade=3)
+Cliente 02 (senha=2, prioridade=1)
+Cliente 03 (senha=3, prioridade=1)
+Cliente 04 (senha=4, prioridade=3)
+Cliente 05 (senha=5, prioridade=2)
+Cliente 06 (senha=6, prioridade=1)
+Cliente 07 (senha=7, prioridade=1)
+Cliente 08 (senha=8, prioridade=1)
+Cliente 09 (senha=9, prioridade=3)
+Cliente 10 (senha=10, prioridade=1)
+Cliente 11 (senha=11, prioridade=3)
+Cliente 12 (senha=12, prioridade=3)
+Cliente 13 (senha=13, prioridade=3)
+Cliente 14 (senha=14, prioridade=1)
+Cliente 15 (senha=15, prioridade=3)
+Cliente 16 (senha=16, prioridade=2)
+Cliente 17 (senha=17, prioridade=1)
+Cliente 18 (senha=18, prioridade=1)
+Cliente 19 (senha=19, prioridade=1)
+Cliente 20 (senha=20, prioridade=1)
+
+Ordem de atendimento - prioridade:
+Cliente 02 (senha=2, prioridade=1)
+Cliente 03 (senha=3, prioridade=1)
+Cliente 06 (senha=6, prioridade=1)
+Cliente 07 (senha=7, prioridade=1)
+Cliente 08 (senha=8, prioridade=1)
+Cliente 10 (senha=10, prioridade=1)
+Cliente 14 (senha=14, prioridade=1)
+Cliente 17 (senha=17, prioridade=1)
+Cliente 18 (senha=18, prioridade=1)
+Cliente 19 (senha=19, prioridade=1)
+Cliente 20 (senha=20, prioridade=1)
+Cliente 05 (senha=5, prioridade=2)
+Cliente 16 (senha=16, prioridade=2)
+Cliente 01 (senha=1, prioridade=3)
+Cliente 04 (senha=4, prioridade=3)
+Cliente 09 (senha=9, prioridade=3)
+Cliente 11 (senha=11, prioridade=3)
+Cliente 12 (senha=12, prioridade=3)
+Cliente 13 (senha=13, prioridade=3)
+Cliente 15 (senha=15, prioridade=3)
+
+Comparação dos resultados
+Clássica: atendeu os 20 clientes na ordem de chegada.
+Circular: manteve a mesma ordem, reutilizando as 5 posições.
+Prioridade: atendeu os níveis 1, 2 e 3, nessa ordem, respeitando a chegada nos empates.
+A clássica e a de prioridade receberam todos os clientes antes de atender.
+Na circular, foi preciso intercalar entradas e atendimentos para liberar espaço.
+Testes concluídos sem erros.
