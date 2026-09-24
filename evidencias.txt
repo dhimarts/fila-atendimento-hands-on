@@ -175,3 +175,423 @@ Prioridade: atendeu os níveis 1, 2 e 3, nessa ordem, respeitando a chegada nos 
 A clássica e a de prioridade receberam todos os clientes antes de atender.
 Na circular, foi preciso intercalar entradas e atendimentos para liberar espaço.
 Testes concluídos sem erros.
+
+EVIDÊNCIA DO MENU - execução com entradas de teste automatizadas
+
+Menu de atendimento
+Cada fila mantém seus próprios clientes. As senhas são geradas automaticamente.
+
+Fila selecionada: Clássica
+1 - Inserir cliente
+2 - Atender próximo cliente
+3 - Consultar a fila
+4 - Visualizar o estado do sistema
+5 - Trocar de fila
+0 - Sair
+Opção: 9
+Opção inválida. Escolha uma das opções do menu.
+
+Fila selecionada: Clássica
+1 - Inserir cliente
+2 - Atender próximo cliente
+3 - Consultar a fila
+4 - Visualizar o estado do sistema
+5 - Trocar de fila
+0 - Sair
+Opção: 2
+Não há clientes para atender nesta fila.
+
+Fila selecionada: Clássica
+1 - Inserir cliente
+2 - Atender próximo cliente
+3 - Consultar a fila
+4 - Visualizar o estado do sistema
+5 - Trocar de fila
+0 - Sair
+Opção: 3
+A fila está vazia.
+
+Fila selecionada: Clássica
+1 - Inserir cliente
+2 - Atender próximo cliente
+3 - Consultar a fila
+4 - Visualizar o estado do sistema
+5 - Trocar de fila
+0 - Sair
+Opção: 1
+Nome: 
+Informe um nome para o cliente.
+
+Fila selecionada: Clássica
+1 - Inserir cliente
+2 - Atender próximo cliente
+3 - Consultar a fila
+4 - Visualizar o estado do sistema
+5 - Trocar de fila
+0 - Sair
+Opção: 1
+Nome: Teste
+Prioridade (1 = emergência, 2 = prioritário, 3 = normal): abc
+Prioridade inválida. Use 1, 2 ou 3.
+
+Fila selecionada: Clássica
+1 - Inserir cliente
+2 - Atender próximo cliente
+3 - Consultar a fila
+4 - Visualizar o estado do sistema
+5 - Trocar de fila
+0 - Sair
+Opção: 1
+Nome: Ana
+Prioridade (1 = emergência, 2 = prioritário, 3 = normal): 3
+Cliente inserido: Ana (senha=1, prioridade=3)
+
+Fila selecionada: Clássica
+1 - Inserir cliente
+2 - Atender próximo cliente
+3 - Consultar a fila
+4 - Visualizar o estado do sistema
+5 - Trocar de fila
+0 - Sair
+Opção: 1
+Nome: Bruno
+Prioridade (1 = emergência, 2 = prioritário, 3 = normal): 1
+Cliente inserido: Bruno (senha=2, prioridade=1)
+
+Fila selecionada: Clássica
+1 - Inserir cliente
+2 - Atender próximo cliente
+3 - Consultar a fila
+4 - Visualizar o estado do sistema
+5 - Trocar de fila
+0 - Sair
+Opção: 3
+Próximo cliente: Ana (senha=1, prioridade=3)
+
+Clientes na ordem de atendimento:
+Ana (senha=1, prioridade=3)
+Bruno (senha=2, prioridade=1)
+
+Fila selecionada: Clássica
+1 - Inserir cliente
+2 - Atender próximo cliente
+3 - Consultar a fila
+4 - Visualizar o estado do sistema
+5 - Trocar de fila
+0 - Sair
+Opção: 2
+Cliente atendido: Ana (senha=1, prioridade=3)
+
+Fila selecionada: Clássica
+1 - Inserir cliente
+2 - Atender próximo cliente
+3 - Consultar a fila
+4 - Visualizar o estado do sistema
+5 - Trocar de fila
+0 - Sair
+Opção: 4
+Clássica: 1 cliente(s) aguardando
+Próximo: Bruno (senha=2, prioridade=1)
+Circular: 0 cliente(s) aguardando
+front=0, rear=0, tamanho=0, posicoes=[None, None, None, None, None]
+Cheia: não
+Prioridade: 0 cliente(s) aguardando
+
+Fila selecionada: Clássica
+1 - Inserir cliente
+2 - Atender próximo cliente
+3 - Consultar a fila
+4 - Visualizar o estado do sistema
+5 - Trocar de fila
+0 - Sair
+Opção: 5
+Escolha a fila (1 = clássica, 2 = circular, 3 = prioridade): 9
+Fila inválida. Use 1, 2 ou 3.
+
+Fila selecionada: Clássica
+1 - Inserir cliente
+2 - Atender próximo cliente
+3 - Consultar a fila
+4 - Visualizar o estado do sistema
+5 - Trocar de fila
+0 - Sair
+Opção: 5
+Escolha a fila (1 = clássica, 2 = circular, 3 = prioridade): 2
+
+Fila selecionada: Circular
+1 - Inserir cliente
+2 - Atender próximo cliente
+3 - Consultar a fila
+4 - Visualizar o estado do sistema
+5 - Trocar de fila
+0 - Sair
+Opção: 1
+Nome: Carla
+Prioridade (1 = emergência, 2 = prioritário, 3 = normal): 3
+Cliente inserido: Carla (senha=3, prioridade=3)
+
+Fila selecionada: Circular
+1 - Inserir cliente
+2 - Atender próximo cliente
+3 - Consultar a fila
+4 - Visualizar o estado do sistema
+5 - Trocar de fila
+0 - Sair
+Opção: 1
+Nome: Diego
+Prioridade (1 = emergência, 2 = prioritário, 3 = normal): 3
+Cliente inserido: Diego (senha=4, prioridade=3)
+
+Fila selecionada: Circular
+1 - Inserir cliente
+2 - Atender próximo cliente
+3 - Consultar a fila
+4 - Visualizar o estado do sistema
+5 - Trocar de fila
+0 - Sair
+Opção: 1
+Nome: Eva
+Prioridade (1 = emergência, 2 = prioritário, 3 = normal): 3
+Cliente inserido: Eva (senha=5, prioridade=3)
+
+Fila selecionada: Circular
+1 - Inserir cliente
+2 - Atender próximo cliente
+3 - Consultar a fila
+4 - Visualizar o estado do sistema
+5 - Trocar de fila
+0 - Sair
+Opção: 1
+Nome: Fabio
+Prioridade (1 = emergência, 2 = prioritário, 3 = normal): 3
+Cliente inserido: Fabio (senha=6, prioridade=3)
+
+Fila selecionada: Circular
+1 - Inserir cliente
+2 - Atender próximo cliente
+3 - Consultar a fila
+4 - Visualizar o estado do sistema
+5 - Trocar de fila
+0 - Sair
+Opção: 1
+Nome: Gabi
+Prioridade (1 = emergência, 2 = prioritário, 3 = normal): 3
+Cliente inserido: Gabi (senha=7, prioridade=3)
+
+Fila selecionada: Circular
+1 - Inserir cliente
+2 - Atender próximo cliente
+3 - Consultar a fila
+4 - Visualizar o estado do sistema
+5 - Trocar de fila
+0 - Sair
+Opção: 1
+Fila circular cheia. Atenda um cliente antes de inserir outro.
+
+Fila selecionada: Circular
+1 - Inserir cliente
+2 - Atender próximo cliente
+3 - Consultar a fila
+4 - Visualizar o estado do sistema
+5 - Trocar de fila
+0 - Sair
+Opção: 4
+Clássica: 1 cliente(s) aguardando
+Próximo: Bruno (senha=2, prioridade=1)
+Circular: 5 cliente(s) aguardando
+Próximo: Carla (senha=3, prioridade=3)
+front=0, rear=0, tamanho=5, posicoes=[3, 4, 5, 6, 7]
+Cheia: sim
+Prioridade: 0 cliente(s) aguardando
+
+Fila selecionada: Circular
+1 - Inserir cliente
+2 - Atender próximo cliente
+3 - Consultar a fila
+4 - Visualizar o estado do sistema
+5 - Trocar de fila
+0 - Sair
+Opção: 2
+Cliente atendido: Carla (senha=3, prioridade=3)
+
+Fila selecionada: Circular
+1 - Inserir cliente
+2 - Atender próximo cliente
+3 - Consultar a fila
+4 - Visualizar o estado do sistema
+5 - Trocar de fila
+0 - Sair
+Opção: 1
+Nome: Helena
+Prioridade (1 = emergência, 2 = prioritário, 3 = normal): 2
+Cliente inserido: Helena (senha=8, prioridade=2)
+
+Fila selecionada: Circular
+1 - Inserir cliente
+2 - Atender próximo cliente
+3 - Consultar a fila
+4 - Visualizar o estado do sistema
+5 - Trocar de fila
+0 - Sair
+Opção: 3
+Próximo cliente: Diego (senha=4, prioridade=3)
+
+Clientes na ordem de atendimento:
+Diego (senha=4, prioridade=3)
+Eva (senha=5, prioridade=3)
+Fabio (senha=6, prioridade=3)
+Gabi (senha=7, prioridade=3)
+Helena (senha=8, prioridade=2)
+
+Fila selecionada: Circular
+1 - Inserir cliente
+2 - Atender próximo cliente
+3 - Consultar a fila
+4 - Visualizar o estado do sistema
+5 - Trocar de fila
+0 - Sair
+Opção: 4
+Clássica: 1 cliente(s) aguardando
+Próximo: Bruno (senha=2, prioridade=1)
+Circular: 5 cliente(s) aguardando
+Próximo: Diego (senha=4, prioridade=3)
+front=1, rear=1, tamanho=5, posicoes=[8, 4, 5, 6, 7]
+Cheia: sim
+Prioridade: 0 cliente(s) aguardando
+
+Fila selecionada: Circular
+1 - Inserir cliente
+2 - Atender próximo cliente
+3 - Consultar a fila
+4 - Visualizar o estado do sistema
+5 - Trocar de fila
+0 - Sair
+Opção: 5
+Escolha a fila (1 = clássica, 2 = circular, 3 = prioridade): 3
+
+Fila selecionada: Prioridade
+1 - Inserir cliente
+2 - Atender próximo cliente
+3 - Consultar a fila
+4 - Visualizar o estado do sistema
+5 - Trocar de fila
+0 - Sair
+Opção: 1
+Nome: Igor
+Prioridade (1 = emergência, 2 = prioritário, 3 = normal): 3
+Cliente inserido: Igor (senha=9, prioridade=3)
+
+Fila selecionada: Prioridade
+1 - Inserir cliente
+2 - Atender próximo cliente
+3 - Consultar a fila
+4 - Visualizar o estado do sistema
+5 - Trocar de fila
+0 - Sair
+Opção: 1
+Nome: Joana
+Prioridade (1 = emergência, 2 = prioritário, 3 = normal): 1
+Cliente inserido: Joana (senha=10, prioridade=1)
+
+Fila selecionada: Prioridade
+1 - Inserir cliente
+2 - Atender próximo cliente
+3 - Consultar a fila
+4 - Visualizar o estado do sistema
+5 - Trocar de fila
+0 - Sair
+Opção: 1
+Nome: Katia
+Prioridade (1 = emergência, 2 = prioritário, 3 = normal): 1
+Cliente inserido: Katia (senha=11, prioridade=1)
+
+Fila selecionada: Prioridade
+1 - Inserir cliente
+2 - Atender próximo cliente
+3 - Consultar a fila
+4 - Visualizar o estado do sistema
+5 - Trocar de fila
+0 - Sair
+Opção: 3
+Próximo cliente: Joana (senha=10, prioridade=1)
+
+Clientes na ordem de atendimento:
+Joana (senha=10, prioridade=1)
+Katia (senha=11, prioridade=1)
+Igor (senha=9, prioridade=3)
+
+Fila selecionada: Prioridade
+1 - Inserir cliente
+2 - Atender próximo cliente
+3 - Consultar a fila
+4 - Visualizar o estado do sistema
+5 - Trocar de fila
+0 - Sair
+Opção: 2
+Cliente atendido: Joana (senha=10, prioridade=1)
+
+Fila selecionada: Prioridade
+1 - Inserir cliente
+2 - Atender próximo cliente
+3 - Consultar a fila
+4 - Visualizar o estado do sistema
+5 - Trocar de fila
+0 - Sair
+Opção: 3
+Próximo cliente: Katia (senha=11, prioridade=1)
+
+Clientes na ordem de atendimento:
+Katia (senha=11, prioridade=1)
+Igor (senha=9, prioridade=3)
+
+Fila selecionada: Prioridade
+1 - Inserir cliente
+2 - Atender próximo cliente
+3 - Consultar a fila
+4 - Visualizar o estado do sistema
+5 - Trocar de fila
+0 - Sair
+Opção: 4
+Clássica: 1 cliente(s) aguardando
+Próximo: Bruno (senha=2, prioridade=1)
+Circular: 5 cliente(s) aguardando
+Próximo: Diego (senha=4, prioridade=3)
+front=1, rear=1, tamanho=5, posicoes=[8, 4, 5, 6, 7]
+Cheia: sim
+Prioridade: 2 cliente(s) aguardando
+Próximo: Katia (senha=11, prioridade=1)
+
+Fila selecionada: Prioridade
+1 - Inserir cliente
+2 - Atender próximo cliente
+3 - Consultar a fila
+4 - Visualizar o estado do sistema
+5 - Trocar de fila
+0 - Sair
+Opção: 5
+Escolha a fila (1 = clássica, 2 = circular, 3 = prioridade): 1
+
+Fila selecionada: Clássica
+1 - Inserir cliente
+2 - Atender próximo cliente
+3 - Consultar a fila
+4 - Visualizar o estado do sistema
+5 - Trocar de fila
+0 - Sair
+Opção: 3
+Próximo cliente: Bruno (senha=2, prioridade=1)
+
+Clientes na ordem de atendimento:
+Bruno (senha=2, prioridade=1)
+
+Fila selecionada: Clássica
+1 - Inserir cliente
+2 - Atender próximo cliente
+3 - Consultar a fila
+4 - Visualizar o estado do sistema
+5 - Trocar de fila
+0 - Sair
+Opção: 0
+Atendimento encerrado.
+
+Verificações do menu concluídas sem erros: inserção, atendimento, consulta, estado, troca de fila, entradas inválidas e fila cheia.
