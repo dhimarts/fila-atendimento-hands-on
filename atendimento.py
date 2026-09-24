@@ -224,5 +224,85 @@ def main():
     print('Testes concluídos sem erros.')
 
 
+def clientes_em_ordem(fila):
+    """Consulta sem remover clientes da fila."""
+    if isinstance(fila, FilaCircular):
+        return [fila.dados[(fila.front + i) % fila.capacidade]
+                for i in range(fila.size())]
+    if isinstance(fila, FilaPrioridade):
+        return [item[2] for item in sorted(fila.dados)]
+    return list(fila.dados)
+
+
+def menu():
+    filas = {'1': Fila(), '2': FilaCircular(5), '3': FilaPrioridade()}
+    nomes = {'1': 'Clássica', '2': 'Circular', '3': 'Prioridade'}
+    escolha = '1'
+    proxima_senha = 1
+    print('\nMenu de atendimento')
+    print('Cada fila mantém seus próprios clientes. As senhas são geradas automaticamente.')
+    while True:
+        fila = filas[escolha]
+        print(f'\nFila selecionada: {nomes[escolha]}')
+        print('1 - Inserir cliente')
+        print('2 - Atender próximo cliente')
+        print('3 - Consultar a fila')
+        print('4 - Visualizar o estado do sistema')
+        print('5 - Trocar de fila')
+        print('0 - Sair')
+        try:
+            opcao = input('Opção: ').strip()
+            if opcao == '0':
+                print('Atendimento encerrado.')
+                return filas
+            if opcao == '1':
+                if isinstance(fila, FilaCircular) and fila.full():
+                    print('Fila circular cheia. Atenda um cliente antes de inserir outro.')
+                    continue
+                nome = input('Nome: ').strip()
+                if not nome:
+                    print('Informe um nome para o cliente.')
+                    continue
+                valor = input('Prioridade (1 = emergência, 2 = prioritário, 3 = normal): ').strip()
+                if valor not in ('1', '2', '3'):
+                    print('Prioridade inválida. Use 1, 2 ou 3.')
+                    continue
+                cliente = Cliente(nome, proxima_senha, int(valor))
+                fila.enqueue(cliente)
+                proxima_senha += 1
+                print('Cliente inserido:', cliente)
+            elif opcao == '2':
+                if fila.empty():
+                    print('Não há clientes para atender nesta fila.')
+                else:
+                    print('Cliente atendido:', fila.dequeue())
+            elif opcao == '3':
+                if fila.empty():
+                    print('A fila está vazia.')
+                else:
+                    print('Próximo cliente:', fila.head())
+                    mostrar('Clientes na ordem de atendimento:', clientes_em_ordem(fila))
+            elif opcao == '4':
+                for chave, atual in filas.items():
+                    print(f'{nomes[chave]}: {atual.size()} cliente(s) aguardando')
+                    if not atual.empty():
+                        print('Próximo:', atual.head())
+                    if isinstance(atual, FilaCircular):
+                        print(atual.estado())
+                        print('Cheia:', 'sim' if atual.full() else 'não')
+            elif opcao == '5':
+                nova = input('Escolha a fila (1 = clássica, 2 = circular, 3 = prioridade): ').strip()
+                if nova in filas:
+                    escolha = nova
+                else:
+                    print('Fila inválida. Use 1, 2 ou 3.')
+            else:
+                print('Opção inválida. Escolha uma das opções do menu.')
+        except (EOFError, KeyboardInterrupt):
+            print('\nAtendimento encerrado.')
+            return filas
+
+
 if __name__ == '__main__':
     main()
+    menu()
